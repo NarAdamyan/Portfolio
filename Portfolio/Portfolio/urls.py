@@ -23,4 +23,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("resume.urls")),
 
-] + static(settings.STATIC_URL,document_root=settings.STATIC.ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
