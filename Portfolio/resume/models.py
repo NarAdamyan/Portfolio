@@ -107,4 +107,16 @@ class Count_Box(models.Model):
     title=models.TextField()
     subtitle=models.TextField()  
     def __str__(self) -> str:
-        return f"{self.title} as head"    
+        return f"{self.title} as head"   
+
+class SocialLinks(models.Model):
+    linkname=models.TextField(max_length=50)   
+    iconas=models.CharField(max_length=20)  
+    def __str__(self):
+        return f"{self.linkname}"
+    
+class Message(models.Model):
+    full_name=models.CharField(max_length=50)
+    email=models.EmailField()
+    subject=models.CharField(max_length=100)
+    message=models.TextField(max_length=1000)    
