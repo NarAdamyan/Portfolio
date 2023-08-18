@@ -34,10 +34,14 @@ def home(request):
     personal_info=PersonalInfo.objects.get(user__username="narineadamyan")
     social_links=SocialLinks.objects.all()
     message_form=MessageForm()
+    portfolio_project = PortfolioProject.objects.all()
     data = {"title_about_me" : "Embrace the challenge, unleash your potential, and watch your coding skills soar as a junior Python developer."
             ,"skills":skills,"initials":initials,"header":header,"infos1":infos[:4],"infos2":infos[4:],"countBox1":countBox[:2],"countBox2":countBox[2:],"experience":experience
-            ,"education":education,"summery":summery,"personal_info":personal_info,"message_form":message_form, "social_links":social_links}  
+            ,"education":education,"summery":summery,"personal_info":personal_info,"message_form":message_form, "social_links":social_links,"portfolio_project": portfolio_project}  
     
     return render(request,"index.html",context=data, status=status) 
      
+def portfolio_project(request, id):
+    project = get_object_or_404(PortfolioProject, id=id)
+    return render(request, 'portfolio-details.html', context= {"project": project})     
     
