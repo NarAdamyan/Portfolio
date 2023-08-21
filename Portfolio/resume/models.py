@@ -85,7 +85,19 @@ class Services(models.Model):
     text=models.TextField()
     def __str__(self) -> str:
         return f"{self.title}"
-
+    
+class Languages(models.Model):
+    language=models.CharField(max_length=15)
+    level=models.CharField(max_length=20)    
+    def __str__(self) -> str:
+        return f"{self.language}"
+    
+class Courses(models.Model):
+    type=models.CharField(max_length=15)
+    company=models.CharField(max_length=20)    
+    def __str__(self) -> str:
+        return f"{self.type}"    
+     
 class Stuff(models.Model):
     img=models.ImageField()
     initials=models.TextField()
@@ -93,14 +105,7 @@ class Stuff(models.Model):
     text=models.TextField()
     def __str__(self) -> str:
         return f"{self.initials}, {self.position}"     
-
-class Stuff(models.Model):
-    img=models.ImageField()
-    initials=models.TextField()
-    position=models.TextField()
-    text=models.TextField()
-    def __str__(self) -> str:
-        return f"{self.initials}, {self.position}"     
+ 
 
 class Count_Box(models.Model):
     emojy=models.TextField(blank=True,null=True,max_length=30)

@@ -35,9 +35,11 @@ def home(request):
     social_links=SocialLinks.objects.all()
     message_form=MessageForm()
     portfolio_project = PortfolioProject.objects.all()
+    language=Languages.objects.all()
+    courses=Courses.objects.all()
     data = {"title_about_me" : "Embrace the challenge, unleash your potential, and watch your coding skills soar as a junior Python developer."
             ,"skills":skills,"initials":initials,"header":header,"infos1":infos[:4],"infos2":infos[4:],"countBox1":countBox[:2],"countBox2":countBox[2:],"experience":experience
-            ,"education":education,"summery":summery,"personal_info":personal_info,"message_form":message_form, "social_links":social_links,"portfolio_project": portfolio_project}  
+            ,"education":education,"summery":summery,"personal_info":personal_info,"message_form":message_form, "social_links":social_links,"portfolio_project": portfolio_project,'language':language, 'courses':courses}  
     
     return render(request,"index.html",context=data, status=status) 
      

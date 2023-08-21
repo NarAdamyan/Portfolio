@@ -137,7 +137,7 @@
             <ul>
               <li>{{i.adress}}</li>
               <li>{{i.phone_number}}</li>
-              <li>{{i.e_mail}}</li>
+              <li><a href="mailto:{{ personal_info.user.email }}">{{ personal_info.user.email }}</a></li>
             </ul>
             </p>
             {% endfor %}
@@ -147,7 +147,7 @@
 
           <div class="resume-item">
             {% for i in education%}
-            <h4>{{i.grade}} &amp; Graphic Design</h4>
+            <h4>{{i.grade}} Economy of Ecology</h4>
             <h5>{{i.start_date}} - {{i.end_date}}</h5>
             <p><em>{{i.university_name}}</em></p>
             <p>Ecological Economics is the informed management of resources and socio-environmental interactions to
@@ -155,7 +155,20 @@
               provision.</p>
             {% endfor %}
           </div>
+          
+          <div class="col-lg-6">
 
+            <h3 class="resume-title">Languages</h3>
+            <div class="resume-item pb-0">
+              {% for i in language %}
+              <h4>{{i.language}}</h4>
+              <p><em>{{i.level}}</em></p>
+             
+              {% endfor %}
+            </div>
+
+        </div>
+        
         </div>
 
         <div class="col-lg-6">
@@ -171,10 +184,11 @@
           </div>
           {% endfor %}
         </div>
-
+        
       </div>
-
+      
     </div>
+    
   </section><!-- End My Resume Section -->
 
 
@@ -309,15 +323,8 @@
       </div>
 
     </div>
-  </section><!-- End My Portfolio Section -->
-
-
-
-
-
-
-
-
+  </section>
+  <!-- End My Portfolio Section -->
 
   <section id="portfolio" class="portfolio section-bg">
     <div class="container">
@@ -382,7 +389,7 @@
               <div class="info-box mt-4">
                 <i class="bx bx-envelope"></i>
                 <h3>Email Me</h3>
-                <p>naradamyan995@gmail.com</p>
+                <p> <a href="mailto:{{ personal_info.user.email }}">{{ personal_info.user.email }}</a></p>
               </div>
             </div>
             <div class="col-md-6">
@@ -458,6 +465,7 @@
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/laura-free-creative-bootstrap-theme/ -->
       Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
     </div>
+
   </div>
 </footer><!-- End Footer -->
 
