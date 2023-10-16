@@ -128,21 +128,7 @@
 
         <div class="col-lg-6">
 
-          <h3 class="resume-title">Summery</h3>
-          <div class="resume-item pb-0">
-            {% for i in summery %}
-            <h4>{{i.name_surname}}</h4>
-            <p><em>{{i.short_cv}}</em></p>
-            <p>
-            <ul>
-              <li>{{i.adress}}</li>
-              <li>{{i.phone_number}}</li>
-              <li><a href="mailto:{{ personal_info.user.email }}">{{ personal_info.user.email }}</a></li>
-            </ul>
-            </p>
-            {% endfor %}
-          </div>
-
+          
           <h3 class="resume-title">Education</h3>
 
           <div class="resume-item">
@@ -158,7 +144,16 @@
           
           <div class="col-lg-6">
 
-            <h3 class="resume-title">Languages</h3>
+            
+            <div class="col-lg-6">
+              <h3 class="resume-title">Certifications</h3>
+              <div class="resume-item pb-0">
+                {% for i in courses %}
+                <h4>{{i.type}}</h4>
+                <p><em>{{i.company}}</em></p>
+                {% endfor %}
+              </div>
+              <h3 class="resume-title">Languages</h3> 
             <div class="resume-item pb-0">
               {% for i in language %}
               <h4>{{i.language}}</h4>
@@ -166,8 +161,9 @@
              
               {% endfor %}
             </div>
-
-        </div>
+  
+            </div>
+          </div>
         
         </div>
 
@@ -183,6 +179,7 @@
                 </p>
           </div>
           {% endfor %}
+          
         </div>
         
       </div>
@@ -268,7 +265,7 @@
             <p>Music</p>
             <a href="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" data-gallery="portfolioGallery"
               class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-            <a href="https://www.youtube.com/watch?v=TO-_3tck2tg" target="_blank"  class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+            <a href="https://www.youtube.com/watch?v=3JWTaaS7LdU" target="_blank"  class="details-link" title="More Details"><i class="bx bx-link"></i></a>
           </div>
         </div>
 
@@ -423,11 +420,13 @@
               <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
             </div>
             <div class="my-3">
-              <div class="loading">Loading</div>
+              
               <div class="error-message"></div>
+              <button type="button" class="btn btn-outline-warning">Send message</button>
               <div class="sent-message">Your message has been sent. Thank you!</div>
             </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
+            
+            <!-- <div class="text-center"><button type="submit">Send Message</button></div> -->
 
           </form>
 

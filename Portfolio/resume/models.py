@@ -53,7 +53,7 @@ class For_clients(models.Model):
 class Summery(models.Model):
     title=models.TextField(max_length=30)
     name_surname=models.CharField(max_length=50)  
-    short_cv=models.CharField(max_length=200) 
+    short_cv=models.CharField(max_length=500) 
     phone_number=models.IntegerField()
     adress=models.CharField(max_length=35)
     e_mail=models.EmailField()
@@ -91,10 +91,10 @@ class Languages(models.Model):
     level=models.CharField(max_length=20)    
     def __str__(self) -> str:
         return f"{self.language}"
-    
+        
 class Courses(models.Model):
-    type=models.CharField(max_length=15)
-    company=models.CharField(max_length=20)    
+    type=models.CharField(max_length=30)
+    company=models.CharField(max_length=50)    
     def __str__(self) -> str:
         return f"{self.type}"    
      
